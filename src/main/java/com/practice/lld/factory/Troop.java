@@ -1,7 +1,11 @@
 package com.practice.lld.factory;
 
+import lombok.Getter;
+
 public abstract class Troop {
+    @Getter
     protected String name;
+    @Getter
     protected int health;
     protected int damage;
 
@@ -9,14 +13,6 @@ public abstract class Troop {
         this.name = name;
         this.health = health;
         this.damage = damage;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getHealth() {
-        return health;
     }
 
     public abstract void attack();
