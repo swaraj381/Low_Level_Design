@@ -43,7 +43,7 @@ public class DBConnectionMultiThreaded {
 
     static DBConnectionMultiThreaded getDBConnection(String dbName) {
         //Double check locking
-        if (instance != null) {
+        if (instance == null) {
             synchronized (DBConnectionMultiThreaded.class) {
                 if (instance == null) {
                     instance = new DBConnectionMultiThreaded(dbName);
